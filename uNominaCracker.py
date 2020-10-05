@@ -11,7 +11,6 @@ from pwn import *
 from datetime import datetime
 
 # Variables
-fileZip = sys.argv[1]
 letter = 'TRWAGMYFPDXBNJZSQVHLCKE'
 showTime = datetime.now()
 
@@ -57,11 +56,15 @@ def handler(sig, frame):
 signal.signal(signal.SIGINT, handler)
 
 # Show results
-logotype()
-print("%s[%s+%s] Start cracking: %sh" % (bold, blue, end, showTime.strftime("%d/%m/%Y %H:%M")))
-statusPassword = log.progress("Password testing:")
+if len(sys.argv) > 1:
+    logotype()
+    fileZip = sys.argv[1]
+    print("%s[%s+%s] Start cracking: %sh" % (bold, blue, end, showTime.strftime("%d/%m/%Y %H:%M")))
+    statusPassword = log.progress("Password testing:")
 
-for dniNum in range(10000000,99999999): 
-    rest = dniNum % 23 
-    password = "%s%s" % (dniNum, letter[rest]) 
-    extractZip() 
+    for dniNum in range(10000000,99999999): 
+        rest = dniNum % 23 
+        password = "%s%s" % (dniNum, letter[rest]) 
+        extractZip() 
+else:
+    print("%s[%s!%s] Error, missing .zip file." % (bold, red, end))
