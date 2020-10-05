@@ -5,7 +5,7 @@
 
 # Description:
 
-It is a script written in Python that performs brute force on workers' payroll files through the use of their DNI (Documento Nacional de Identidad). 
+It is a script written in Python that performs brute force on workers' payroll files through the use of their DNI (National Identity Document). 
 
 # Need modules for working!
 ```
