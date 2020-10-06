@@ -9,6 +9,7 @@
 import sys, zipfile, signal
 from pwn import *
 from datetime import datetime
+from pathlib import Path
 
 # Variables
 letter = 'TRWAGMYFPDXBNJZSQVHLCKE'
@@ -57,14 +58,17 @@ signal.signal(signal.SIGINT, handler)
 
 # Show results
 if len(sys.argv) > 1:
-    logotype()
     fileZip = sys.argv[1]
-    print("%s[%s+%s] Start cracking: %sh" % (bold, blue, end, showTime.strftime("%d/%m/%Y %H:%M")))
-    statusPassword = log.progress("Password testing:")
+    if Path(fileZip).is_file() and os.path.splitext(fileZip)[1] == ".zip":
+        logotype()
+        print("%s[%s+%s] Start cracking: %sh" % (bold, blue, end, showTime.strftime("%d/%m/%Y %H:%M")))
+        statusPassword = log.progress("Password testing:")
 
-    for dniNum in range(10000000,99999999): 
-        rest = dniNum % 23 
-        password = "%s%s" % (dniNum, letter[rest]) 
-        extractZip() 
+        for dniNum in range(10000000,99999999): 
+            rest = dniNum % 23 
+            password = "%s%s" % (dniNum, letter[rest]) 
+            extractZip()
+    else:
+        print("Error, the file does not exist or is not a .zip file.")
 else:
     print("%s[%s!%s] Error, missing .zip file." % (bold, red, end))
