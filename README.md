@@ -26,7 +26,7 @@ GitHub:(https://github.com/interhack86)
 $ git clone https://github.com/m3n0sd0n4ld/uNominaCracker
 $ cd uNominaCracker
 $ docker build -t uNominaCracker .
-$ docker run —rm -it -v 'name.zip':/tmp/ uNominaCracker /tmp/name.zip
+$ docker run —rm -it -v 'pathzip':/tmp/ uNominaCracker /tmp/name.zip
 ```
 # PoC
 ![Screenshot](https://github.com/m3n0sd0n4ld/uNominaCracker/blob/main/PoC.png)
