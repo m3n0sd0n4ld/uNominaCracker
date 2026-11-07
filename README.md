@@ -56,19 +56,18 @@ The tool will iterate through all possible DNI numbers (from 10000000 to 9999999
 
 # PoC
 ```console
-root@m3n0sd0n4ld:~# python3 uNominaCracker.py nómina-junio.zip
+┌──(kali㉿kali)-[~/Tools/uNominaCracker]
+└─$ python3 uNominaCracker.py nomina-junio.zip
 
 █──█ ░█▄─░█ █▀▀█ █▀▄▀█ ─▀─ █▀▀▄ █▀▀█ ░█▀▀█ █▀▀█ █▀▀█ █▀▀ █─█ █▀▀ █▀▀█ 
 █──█ ░█░█░█ █──█ █─▀─█ ▀█▀ █──█ █▄▄█ ░█─── █▄▄▀ █▄▄█ █── █▀▄ █▀▀ █▄▄▀ 
 ─▀▀▀ ░█──▀█ ▀▀▀▀ ▀───▀ ▀▀▀ ▀──▀ ▀──▀ ░█▄▄█ ▀─▀▀ ▀──▀ ▀▀▀ ▀─▀ ▀▀▀ ▀─▀▀
                                         by M3n0sD0n4ld (@David_Uton)
-
-[+] Start cracking: 04/10/2020 22:25h
-[v] Password testing:: 67214212R
-[!] DNI Found!: 66988896Q - The files have been extracted.
-[+] Cracking completed: 05/10/2020 12:37h
-[*] Press Control + C to exit
-[-] Exit ...
+    
+[+] Inicio del cracking: 04/10/2020 22:25h
+[!] DNI Found!: 66988896Q - Archivos extraídos.
+[+] Cracking completado: 05/10/2020 12:37h
+[*] Presiona Control + C para salir.
 ```
 
 # Disclaimer
