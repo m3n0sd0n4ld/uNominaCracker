@@ -55,7 +55,21 @@ python3 uNominaCracker.py FILE.ZIP
 The tool will iterate through all possible DNI numbers (from 10000000 to 99999999), compute the correct control letter, and test each password against the ZIP archive. When the correct password is found, the files are extracted to the current directory.
 
 # PoC
-![Screenshot](https://github.com/m3n0sd0n4ld/uNominaCracker/blob/main/PoC.png)
+```console
+root@m3n0sd0n4ld:~# python3 uNominaCracker.py nómina-junio.zip
+
+█──█ ░█▄─░█ █▀▀█ █▀▄▀█ ─▀─ █▀▀▄ █▀▀█ ░█▀▀█ █▀▀█ █▀▀█ █▀▀ █─█ █▀▀ █▀▀█ 
+█──█ ░█░█░█ █──█ █─▀─█ ▀█▀ █──█ █▄▄█ ░█─── █▄▄▀ █▄▄█ █── █▀▄ █▀▀ █▄▄▀ 
+─▀▀▀ ░█──▀█ ▀▀▀▀ ▀───▀ ▀▀▀ ▀──▀ ▀──▀ ░█▄▄█ ▀─▀▀ ▀──▀ ▀▀▀ ▀─▀ ▀▀▀ ▀─▀▀
+                                        by M3n0sD0n4ld (@David_Uton)
+
+[+] Start cracking: 04/10/2020 22:25h
+[v] Password testing:: 67214212R
+[!] DNI Found!: 66988896Q - The files have been extracted.
+[+] Cracking completed: 05/10/2020 12:37h
+[*] Press Control + C to exit
+[-] Exit ...
+```
 
 # Disclaimer
 This has been a proof-of-concept project, so the tool is for personal and legitimate use. I AM NOT RESPONSIBLE FOR ITS INAPPROPRIATE USE.
