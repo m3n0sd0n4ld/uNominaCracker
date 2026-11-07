@@ -11,6 +11,7 @@
 import sys
 import zipfile
 import signal
+import zlib
 from datetime import datetime
 from pathlib import Path
 from pwn import log, context
@@ -42,10 +43,12 @@ def extract_zip(file_path: Path, password: str) -> bool:
     with zipfile.ZipFile(file_path) as zf:
         try:
             zf.setpassword(password.encode('utf-8'))
-            zf.extractall()
-            return True
-        except (RuntimeError, zipfile.BadZipFile):
-            return False
+            if zf.testzip() is None:
+                zf.extractall()
+                return True
+        except (RuntimeError, zipfile.BadZipFile, zlib.error):
+            pass
+    return False
 
 
 def handler(sig, frame) -> None:
