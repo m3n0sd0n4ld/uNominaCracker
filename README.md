@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo_uNominaCracker.png" width="500" alt="at0m"/>
+</p>
+
 # uNominaCracker
 
 ## Credits
